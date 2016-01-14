@@ -25,7 +25,7 @@
         _name = aName;
         _specialiaztion = aSpecialization;
         _patientList = [[NSMutableArray alloc] init];
-        _treatment = [@{ @"headache":@"tylenol", @"stomache":@"bismol", @"pain":@"advil"} mutableCopy];
+        _treatment = [@{ @"headache":@"tylenol", @"stomache":@"bismol", @"pain":@"advil", @"cancer":@"goodluck"} mutableCopy];
     }
     return self;
     
