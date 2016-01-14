@@ -16,7 +16,6 @@
 @property (nonatomic) int age;
 @property (nonatomic) BOOL healthCard;
 @property (nonatomic) NSString *symptom;
-
 @property (nonatomic) NSMutableSet *medsTaken;
 
 - (instancetype)initWithAge:(int)anAge name:(NSString*)patientName healthCard:(BOOL)patientHealthCard symptom:(NSString*)aSymptom;

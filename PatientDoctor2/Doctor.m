@@ -47,7 +47,7 @@
 - (void) requestMedication:(Patient*)patient {
     NSArray* listOfSymptoms = [self.treatment allKeys];
     if ([listOfSymptoms containsObject:patient.symptom])  {
-        NSLog(@"Patient known symptom %@\n", self.treatment[patient.symptom]);
+        NSLog(@"Patient has known symptom %@ and the treatment is %@", patient.symptom, self.treatment[patient.symptom]);
         
         [patient.medsTaken addObject:self.treatment[patient.symptom]];
     } else

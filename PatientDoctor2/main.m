@@ -12,7 +12,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Patient *patient1 = [[Patient alloc] initWithAge:32 name:@"John" healthCard:YES symptom:@"headache"];
+        
+        Patient *patient1 = [[Patient alloc] initWithAge:32 name:@"John" healthCard:YES symptom:@"cancer"];
         Doctor *doc1 = [[Doctor alloc] initWithName:@"Alex" specializtion:@"Neurologist"];
         
         [patient1 visitDoctor:doc1];
