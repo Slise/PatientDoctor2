@@ -16,11 +16,11 @@
     NSArray *inputWords = [self componentsSeparatedByString:@" "];
     // store them into individual words and into a variable
     NSMutableArray *outputWords = [NSMutableArray new];
-    // pigLatinize each word:
-    //      1. move first consontant(s) to end of word
-    //          a) interate over word and remove constant(s) from word
-    //          b) store consonant(s) into a variable and add to end of word
-    //      2. add 'ay' to end of word
+    /* pigLatinize each word:
+          1. move first consontant(s) to end of word
+              a) interate over word and remove constant(s) from word
+              b) store consonant(s) into a variable and add to end of word
+          2. add 'ay' to end of word */
     NSCharacterSet *vowelSet = [NSCharacterSet characterSetWithCharactersInString:@"aeiouy"];
     for (NSString *word in inputWords) {
         NSRange range = [word rangeOfCharacterFromSet:vowelSet];
@@ -29,15 +29,15 @@
             [outputWords addObject:outputWord];
         }
         else {
-            NSUInteger startLength = range.location ;
-            NSRange startRange = NSMakeRange(0, startLength);
-            NSString *start = [word substringWithRange:startRange];
+            NSUInteger beginningLength = range.location ;
+            NSRange beginningRange = NSMakeRange(0, beginningLength);
+            NSString *beginning = [word substringWithRange:beginningRange];
             
             NSUInteger endLength = word.length - range.location;
             NSRange endRange = NSMakeRange(range.location, endLength);
             NSString *end = [word substringWithRange:endRange];
             
-            NSString *outputWord = [NSString stringWithFormat:@"%@%@ay", end, start];
+            NSString *outputWord = [NSString stringWithFormat:@"%@%@ay", end, beginning];
             [outputWords addObject:outputWord];
         }
     }
